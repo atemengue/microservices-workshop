@@ -1,7 +1,6 @@
 const swaggerUi = require('swagger-ui-express');
 const swaggerJsdoc = require('swagger-jsdoc');
 
-
 const options = {
   definition: {
     openapi: '3.0.0',
@@ -22,7 +21,7 @@ const options = {
       }
     ]
   },
-  apis: ["./models/categoryModel.js", "./models/productModel.js"], // files containing annotations as above
+  apis: ["./models/categoryModel.js", "./models/productModel.js", "./index.js"], // files containing annotations as above
 }
 
 const specs = swaggerJsdoc(options);
