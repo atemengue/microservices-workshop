@@ -1,11 +1,15 @@
 const express = require("express");
 const bodyParser = require('body-parser');
+const { mongoConnect } = require('./config/sync');
 
 // init express app
 const app = express();
 
 app.use(bodyParser.json());
 
+
+// database connection
+mongoConnect();
 
 // configure swagger
 require('./swagger')(app)
