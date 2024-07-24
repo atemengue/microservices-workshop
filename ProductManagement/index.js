@@ -1,38 +1,26 @@
-const express = require("express");
-const bodyParser = require('body-parser');
-const { mongoConnect } = require('./config/sync');
+const mongoose = require('mongoose');
+const { app } = require('./app');
 
-// init express app
-const app = express();
+const options = {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  serverSelectionTimeoutMS: 5000,
+  socketTimeoutMS: 45000,
+  autoIndex: true
+};
 
-app.use(bodyParser.json());
-
-
-// database connection
-mongoConnect();
-
-// configure swagger
-require('./swagger')(app)
-
-// health check point
-/**
- * @swagger
- * /:
- *  get:
- *    summary: Health check endpoint
- *    description: Returns a message indicating that the service is running.
- *    responses:
- *      200:
- *        description: A message indicating that the service is running
- */
-
-app.get("/", (req, res) => {
-  res.status(200).send("Product Management Services")
-});
-
-
+const start = async () => {
+  try {
+    mongoose.connect("mongodb://127.0.0.1:27017/products");
+    console.log('Database connected successfully');
+  } catch (error) {
+    console.error('Database connection error:', error);
+  }
+}
 
 const PORT = 3000;
 app.listen(PORT, () => {
   console.log(`Product Management Services Service is running on port ${PORT}`)
-})
+});
+
+start();
