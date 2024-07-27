@@ -3,7 +3,29 @@ const Product = require('../../models/productModel');
 
 const router = express.Router();
 
-router.post('/api/products', async (req, res) => {
+/**
+ * @swagger
+ * /product:
+ *   post:
+ *     summary: Create a new product.
+ *     tags: [Product]
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             $ref: '#/components/schemas/Product'
+ *     responses:
+ *       201:
+ *         description: The created product.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/Product'
+ *       500:
+ *         description: Internal server error.
+ */
+router.post('/product', async (req, res) => {
   try {
     const product = new Product(req.body);
     await product.save();

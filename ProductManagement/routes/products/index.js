@@ -5,6 +5,7 @@ const { deleteProductProductRouter } = require('./delete');
 
 
 const ProductApiRoutes = (app) => {
+
   app.use(createProductRouter);
   app.use(readProductRouter);
   app.use(updateProductRouter);

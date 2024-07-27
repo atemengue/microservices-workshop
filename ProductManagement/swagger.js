@@ -21,7 +21,7 @@ const options = {
       }
     ]
   },
-  apis: ["./models/categoryModel.js", "./models/productModel.js", "./index.js"], // files containing annotations as above
+  apis: ["./models/*", "./routes/products/*"], // files containing annotations as above
 }
 
 const specs = swaggerJsdoc(options);

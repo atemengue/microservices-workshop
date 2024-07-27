@@ -1,6 +1,6 @@
 
 ### CREATE PRODUCT
-POST http://localhost:3000/api/products HTTP/1.1
+POST http://localhost:3000/api/product HTTP/1.1
 Content-Type:  application/json
 
 {
@@ -13,8 +13,10 @@ Content-Type:  application/json
 
 
 ### GET PRODUCT
+GET http://localhost:3000/api/product  HTTP/1.1
+
+### GET PRODUCT
 GET http://localhost:3000/api/products  HTTP/1.1
 
-
 ### DELETE PRODUCT
-DELETE http://localhost:3000/api/products/66a1422e4215438a07d95dce  HTTP/1.1
+DELETE http://localhost:3000/api/product/66a1422e4215438a07d95dce  HTTP/1.1

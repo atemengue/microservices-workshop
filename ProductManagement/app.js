@@ -11,18 +11,17 @@ app.use(bodyParser.json());
 // configure swagger
 require('./swagger')(app)
 
-// health check point
+// healthcheck endpoint
 /**
  * @swagger
  * /:
- *  get:
- *    summary: Health check endpoint
- *    description: Returns a message indicating that the service is running.
- *    responses:
- *      200:
- *        description: A message indicating that the service is running
+ *   get:
+ *     summary: Healthcheck endpoint.
+ *     description: Returns a message indicating that the service is running.
+ *     responses:
+ *       200:
+ *         description: A message indicating that the service is running.
  */
-
 app.get("/", (req, res) => {
   res.status(200).send("Product Management Services")
 });
