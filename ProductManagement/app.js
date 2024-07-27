@@ -1,6 +1,7 @@
 const express = require("express");
 const bodyParser = require('body-parser');
-const ProductApiRoutes = require('./routes/products/index');
+const ProductApiRoutes = require('./routes/product');
+const categoryApiRoutes = require('./routes/category');
 
 // init express app
 const app = express();
@@ -29,5 +30,7 @@ app.get("/", (req, res) => {
 // products routes API
 ProductApiRoutes(app);
 
+// category routes API
+categoryApiRoutes(app);
 
 module.exports = { app }

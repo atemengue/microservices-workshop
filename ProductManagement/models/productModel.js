@@ -7,7 +7,7 @@ const mongoose = require('mongoose');
  *     Product:
  *       type: object
  *       required:
- *         - productId
+ *         - idProduct
  *         - name
  *         - description
  *         - price
@@ -16,6 +16,9 @@ const mongoose = require('mongoose');
  *         id:
  *           type: string
  *           description: The auto-generated ID of the product.
+ *         idProduct:
+ *           type: number
+ *           description: The ID (number) of the product.
  *         name:
  *           type: string
  *           description: The name of the product.
@@ -28,6 +31,9 @@ const mongoose = require('mongoose');
  *         stock:
  *           type: number
  *           description: The stock of th product.
+ *         idCategory:
+ *          type: string
+ *          description: The id of th category.
  *       example:
  *         name: Tomate
  *         description: La tomate est une espèce de plantes herbacées du genre Solanum de la famille des Solanacées, originaire du Mexique
@@ -36,7 +42,7 @@ const mongoose = require('mongoose');
  */
 
 const produtSchema = new mongoose.Schema({
-  productId: {
+  idProduct: {
     type: Number,
     required: true,
     unique: true
@@ -46,7 +52,10 @@ const produtSchema = new mongoose.Schema({
   },
   description: String,
   price: Number,
-  stock: Number
+  stock: Number,
+  idCategory: {
+    type: mongoose.Types.ObjectId, ref: "categories"
+  }
 }, {
   timestamps: true
 });
