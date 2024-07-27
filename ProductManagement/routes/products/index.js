@@ -1,14 +1,16 @@
-const express = require('express');
-const Product = require('../../models/productModel');
+const { createProductRouter } = require('./create');
+const { readProductRouter } = require('./read');
+const { updateProductRouter } = require('./update');
+const { deleteProductProductRouter } = require('./delete');
 
-const router = express.Router();
 
-router.get('/api/products', async (req, res) => {
-  const products = await Product.find({});
+const ProductApiRoutes = (app) => {
+  app.use(createProductRouter);
+  app.use(readProductRouter);
+  app.use(updateProductRouter);
+  app.use(deleteProductProductRouter);
+};
 
-  res.send(products);
-});
+module.exports = ProductApiRoutes;
 
-const indexProductRouter = router
 
-module.exports = { indexProductRouter };

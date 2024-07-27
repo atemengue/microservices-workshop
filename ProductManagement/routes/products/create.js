@@ -6,7 +6,6 @@ const router = express.Router();
 router.post('/api/products', async (req, res) => {
   try {
     const product = new Product(req.body);
-    console.log(req.body)
     await product.save();
     res.status(201).send(product)
   } catch (error) {

@@ -1,7 +1,6 @@
 const express = require("express");
 const bodyParser = require('body-parser');
-const { indexProductRouter } = require('./routes/products/index');
-const { createProductRouter } = require('./routes/products/create');
+const ProductApiRoutes = require('./routes/products/index');
 
 // init express app
 const app = express();
@@ -28,8 +27,8 @@ app.get("/", (req, res) => {
   res.status(200).send("Product Management Services")
 });
 
-app.use(indexProductRouter);
-app.use(createProductRouter);
+// products routes API
+ProductApiRoutes(app);
 
 
 module.exports = { app }

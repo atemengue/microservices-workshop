@@ -2,8 +2,6 @@ const mongoose = require('mongoose');
 const { app } = require('./app');
 
 const options = {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
   serverSelectionTimeoutMS: 5000,
   socketTimeoutMS: 45000,
   autoIndex: true
@@ -11,7 +9,7 @@ const options = {
 
 const start = async () => {
   try {
-    mongoose.connect("mongodb://127.0.0.1:27017/products");
+    mongoose.connect("mongodb://127.0.0.1:27017/products", options);
     console.log('Database connected successfully');
   } catch (error) {
     console.error('Database connection error:', error);
