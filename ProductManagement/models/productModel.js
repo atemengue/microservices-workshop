@@ -7,7 +7,6 @@ const mongoose = require('mongoose');
  *     Product:
  *       type: object
  *       required:
- *         - idProduct
  *         - name
  *         - description
  *         - price
@@ -16,9 +15,6 @@ const mongoose = require('mongoose');
  *         id:
  *           type: string
  *           description: The auto-generated ID of the product.
- *         idProduct:
- *           type: number
- *           description: The ID (number) of the product.
  *         name:
  *           type: string
  *           description: The name of the product.
@@ -42,11 +38,6 @@ const mongoose = require('mongoose');
  */
 
 const produtSchema = new mongoose.Schema({
-  idProduct: {
-    type: Number,
-    required: true,
-    unique: true
-  },
   name: {
     type: String
   },
@@ -54,7 +45,8 @@ const produtSchema = new mongoose.Schema({
   price: Number,
   stock: Number,
   idCategory: {
-    type: mongoose.Types.ObjectId, ref: "categories"
+    type: mongoose.Types.ObjectId, ref: "categories",
+    required: true
   }
 }, {
   timestamps: true

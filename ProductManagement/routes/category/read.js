@@ -25,7 +25,7 @@ const router = express.Router();
  */
 
 router.get('/categories', async (req, res) => {
-  const categories = await Product.find({});
+  const categories = await Category.find({});
   res.send(categories);
 });
 
@@ -54,7 +54,7 @@ router.get('/categories', async (req, res) => {
  *       500:
  *         description: Internal server error.
  */
-router.get('/api/category/:id', async (req, res) => {
+router.get('/category/:id', async (req, res) => {
   try {
     const category = await Category.findById(req.params.id);
     if (!category) {
