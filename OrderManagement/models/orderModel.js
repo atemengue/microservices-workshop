@@ -8,33 +8,30 @@ const { OrderStatus } = require('../types/orderStatus');
  *     Order:
  *       type: object
  *       required:
- *         - idProduct
- *         - name
- *         - description
- *         - price
- *         - stock
+ *         - orderDate
+ *         - userId
+ *         - status
+ *         -productId
+ *         - quantity
  *       properties:
  *         id:
  *           type: string
  *           description: The auto-generated ID of the product.
- *         idProduct:
- *           type: number
+ *         orderDate:
+ *           type: date
  *           description: The ID (number) of the product.
- *         name:
+ *         userId:
  *           type: string
  *           description: The name of the product.
- *         description:
+ *         productId:
+ *           type: string
+ *           description: The ID of the product (reference table).
+ *         quantity:
+ *           type: number
+ *           description: The ID (number) of the product.
+ *         status:
  *           type: string
  *           description: The simple description of the product.
- *         price:
- *           type: number
- *           description: The price of the product.
- *         stock:
- *           type: number
- *           description: The stock of th product.
- *         idCategory:
- *          type: string
- *          description: The id of th category.
  *       example:
  *         name: Tomate
  *         description: La tomate est une espèce de plantes herbacées du genre Solanum de la famille des Solanacées, originaire du Mexique
@@ -55,6 +52,12 @@ const orderSchema = new mongoose.Schema({
     type: String,
     require: Object.values(OrderStatus)
   },
+  productId: {
+    type: mongoose.Types.ObjectId, ref: "products",
+    required: true
+  },
+  quantity: Number,
+
 }, {
   timestamps: true
 });
