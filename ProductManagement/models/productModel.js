@@ -11,6 +11,7 @@ const mongoose = require('mongoose');
  *         - description
  *         - price
  *         - stock
+ *         - categoryId
  *       properties:
  *         id:
  *           type: string
@@ -27,14 +28,16 @@ const mongoose = require('mongoose');
  *         stock:
  *           type: number
  *           description: The stock of th product.
- *         idCategory:
+ *         categoryId:
  *          type: string
  *          description: The id of th category.
  *       example:
- *         name: Tomate
- *         description: La tomate est une espèce de plantes herbacées du genre Solanum de la famille des Solanacées, originaire du Mexique
- *         price: 500
- *         stock: 200
+ *         id: 66a50c53ccb82f368e1c4ac6
+ *         name: Dell XPS 13
+ *         description: Compact and powerful laptop with a 13.4-inch InfinityEdge display, Intel Core i7 processor, and 16GB RAM.
+ *         price: 650000
+ *         stock: 120
+ *         categoryId: 66a507a6f2506fc80a27b576
  */
 
 const produtSchema = new mongoose.Schema({
@@ -44,7 +47,7 @@ const produtSchema = new mongoose.Schema({
   description: String,
   price: Number,
   stock: Number,
-  idCategory: {
+  categoryId: {
     type: mongoose.Types.ObjectId, ref: "categories",
     required: true
   }
