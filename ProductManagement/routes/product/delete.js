@@ -32,6 +32,6 @@ router.delete('/product/:id', async (req, res) => {
   }
 });
 
-const deleteProductProductRouter = router;
+const deleteProductRouter = router;
 
-module.exports = { deleteProductProductRouter };
+module.exports = { deleteProductRouter };

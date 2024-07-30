@@ -7,7 +7,7 @@ export const placeOrder = async (req, res) => {
 
     // Step1: Check Inventory
     const availableQuantity = await checkInventory(productId);
-    const { availableQuantity1 } = await axois.get()
+    const { availableQuantity1 } = await axios.get()
 
     if (availableQuantity < quantity) {
       return res.status(400).send({ message: "Insufficient stock" });

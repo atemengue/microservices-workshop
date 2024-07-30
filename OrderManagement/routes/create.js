@@ -1,5 +1,6 @@
 const express = require('express');
 const Order = require('../models/orderModel');
+const Product = require('../models/productModel');
 
 const router = express.Router();
 
@@ -35,6 +36,19 @@ router.post('/order', async (req, res) => {
   }
 
 });
+
+// create product order Routes
+router.post('/order/product', async (req, res) => {
+  try {
+    const product = await Product.create(req.body)
+    res.status(201).send({ product, isCreated: true })
+  } catch (error) {
+    console.log(error)
+    res.status(500).send({ error, isCreated: false })
+  }
+})
+
+
 
 const createOrderRouter = router
 

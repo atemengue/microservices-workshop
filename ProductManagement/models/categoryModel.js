@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-
 /**
  * @swagger
  * components:
@@ -20,8 +19,9 @@ const mongoose = require('mongoose');
  *           type: string
  *           description: The simple description of the category.
  *       example:
- *         name: Fruit
- *         description: Le fruit, en botanique, est l'organe végétal contenant une ou plusieurs graines
+ *         id: 66a50797f2506fc80a27b574
+ *         name: "Mobile Phones"
+ *         description: Mobile phones are essential devices for communication, entertainment, and productivity in the modern world. This category includes a wide range of smartphones, feature phones, and accessories from various brands and manufacturers. 
  */
 
 const categorySchema = new mongoose.Schema({

@@ -8,13 +8,13 @@ Content-Type:  application/json
   "description": "Compact and powerful laptop with a 13.4-inch InfinityEdge display, Intel Core i7 processor, and 16GB RAM.",
   "price": 650000,
   "stock": 120,
-  "idCategory": "66a507a6f2506fc80a27b576"
+  "categoryId": "66a507a6f2506fc80a27b576"
 }
 
 
 ### GET PRODUCT
 GET http://localhost:3000/api/product  HTTP/1.1
-
+ 
 ### GET PRODUCT
 GET http://localhost:3000/products  HTTP/1.1
 

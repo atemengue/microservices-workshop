@@ -1,5 +1,7 @@
 const express = require('express');
 const Product = require('../../models/productModel');
+const axios = require('axios');
+const config = require('../../config');
 
 const router = express.Router();
 
@@ -27,10 +29,20 @@ const router = express.Router();
  */
 router.post('/product', async (req, res) => {
   try {
+
+    // create product product Management Service
     const product = new Product(req.body);
+
+    const { status, data } = await axios.post(`${config.ORDER_SERVICE}/order/product`, req.body);
+    if (!data.isCreated || status != "201") {
+      return res.status(500).send({ message: "Created Product Failed " });
+    }
     await product.save();
+
     res.status(201).send(product)
+
   } catch (error) {
+    console.log(error)
     res.status(500).send(error)
   }
 
