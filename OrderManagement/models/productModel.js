@@ -10,7 +10,6 @@ const mongoose = require('mongoose');
  *         - name
  *         - description
  *         - price
- *         - stock
  *       properties:
  *         id:
  *           type: string
@@ -24,14 +23,11 @@ const mongoose = require('mongoose');
  *         price:
  *           type: number
  *           description: The price of the product.
- *         stock:
- *           type: number
- *           description: The stock of th product.
  *       example:
- *         name: Tomate
- *         description: La tomate est une espèce de plantes herbacées du genre Solanum de la famille des Solanacées, originaire du Mexique
- *         price: 500
- *         stock: 200
+ *         id: 66a50c15ccb82f368e1c4ac2
+ *         name: "MacBook Air"
+ *         description: "Lightweight laptop with a 13.3-inch Retina display, M1 chip, and up to 18 hours of battery life"
+ *         price: 650000
  */
 
 const produtSchema = new mongoose.Schema({
@@ -40,7 +36,6 @@ const produtSchema = new mongoose.Schema({
   },
   description: String,
   price: Number,
-  stock: Number,
 }, {
   timestamps: true
 });
