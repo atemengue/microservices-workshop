@@ -2,7 +2,6 @@ const mongoose = require('mongoose');
 const instance = require('./config/mongooseSingleton');
 
 // ADD POO
-
 const options = {
   useNewUrlParser: true,
   useUnifiedTopology: true,

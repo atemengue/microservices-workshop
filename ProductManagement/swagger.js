@@ -12,13 +12,13 @@ const options = {
 
     servers: [
       {
+        url: "http://localhost:3000",
+        description: "Local server"
+      },
+      {
         url: "https://propelize.com",
         description: "Production server"
       },
-      {
-        url: "http://localhost:3000",
-        description: "Local server"
-      }
     ]
   },
   apis: ["./models/*", "./routes/product/*", "./routes/category/*"], // files containing annotations as above

@@ -25,7 +25,7 @@ const router = express.Router();
  */
 
 router.get('/products', async (req, res) => {
-  const products = await Product.find({}).populate('idCategory')
+  const products = await Product.find({}).populate('categoryId')
   res.send(products);
 });
 
