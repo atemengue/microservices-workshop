@@ -22,7 +22,7 @@ const connect = async (uri, options) => {
   return instance
 }
 
-const mongoInstance = connect('mongodb://127.0.0.1:27017/products', options)
+const mongoInstance = connect('mongodb://mongodb:27017/products', options)
 Object.freeze(instance)
 
 module.exports = mongoInstance;
