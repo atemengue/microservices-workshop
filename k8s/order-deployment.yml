@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: order-deployment
+  labels:
+    app: order
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: order
+  template:
+    metadata:
+      name: order-pod
+      labels:
+        app: order
+    spec:
+      containers:
+        - name: order
+          image: davechedjoun/order-serv:latest
+          ports:
+            - containerPort : 3001
+      restartPolicy: Always
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: order-clusterip
+spec:
+  type: ClusterIP
+  selector:
+    app: order
+  ports:
+    - port: 3001
+      targetPort: 3001
