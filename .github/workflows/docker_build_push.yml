@@ -14,6 +14,13 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
+      - name: create env file from secrets
+        run: |
+          echo "DATABASE_USERNAME=${{ secrets.DATABASE_USERNAME }} >> .env
+          echo "DATABASE_PASSWORD=${{ secrets.DATABASE_PASSWORD }} >> .env
+          echo "DATABASE_NAME=${{ secrets.DATABASE_NAME }} >> .env
+          echo "DATABASE_URL=${{ secrets.DATABASE_URL }} >> .env  
+
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
 
@@ -26,27 +33,34 @@ jobs:
       - name: Build and push product-serv image
         uses: docker/build-push-action@v5
         with:
-          context: ../ProductManagement
+          context: ./ProductManagement
           push: true
-          tags: davechedjoun/product-serv:latest
+          tags: atemengue/product-serv:latest
 
       - name: Build and push order-serv image
         uses: docker/build-push-action@v5
         with:
-          context: ../OrderManagement
+          context: ./OrderManagement
           push: true
-          tags: davechedjoun/order-serv:latest
+          tags: atemengue/order-serv:latest
 
       - name: Build and push inventory-serv image
         uses: docker/build-push-action@v5
         with:
-          context: ../InventoryManagement
+          context: ./InventoryManagament
           push: true
-          tags: davechedjoun/inventory-serv:latest
+          tags: atemengue/inventory-serv:latest
 
       - name: Build and push payment-serv image
         uses: docker/build-push-action@v5
         with:
-          context: ../PaymentManagement
+          context: ./PaymentManagement
           push: true
-          tags: davechedjoun/payment-serv:latest
+          tags: atemengue/payment-serv:latest
+
+      - name: Build and push gateway-serv image
+        uses: docker/build-push-action@v5
+        with:
+          context: ../MicroserviceApiGateway
+          push: true
+          tags: atemengue/gateway-serv:latest
