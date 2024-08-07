@@ -31,7 +31,19 @@ d'environnement
 de votre configuration postgresSQL.
 - En local, décommenter dans le .env l'url de connexion correspondant pour docker et utiliser celle avec localhost
 
-### . Construire et exécuter l'application 
+#### Variables d'environnement
+Pour fonctionner, l'application utilise les variables d'environnement.
+On y retrouve: 
+- DATABASE_URL=jdbc:postgresql://db:5432/payment-db (la valeur de l'url de connexion à la bd)
+- DATABASE_USERNAME=your_server_username (la valeur du nom de l'utilisateur d'un serveur postgres)
+- DATABASE_PASSWORD=your_server_password (valeur du password de l'utilisateur d'un serveur postgres)
+- DATABASE_NAME=payment-db (valeur du nom de la BD)
+- PGADMIN_EMAIL=admin@admin.com (valeur de l'adresse mail de l'interface pgadmin)
+- PGADMIN_PASSWORD=admin (valeur du password de l'interface pgadmin)
+
+Notez bien que les valeurs présentées pour ces variables peuvent être changées, elles ne sont mis que pour les tests.
+Lorsque vous les changez veuillez à utiliser celle que vous avez définies lors de vos travaux.
+### 4. Construire et exécuter l'application 
 
 ```bash
 ./mvnw clean
