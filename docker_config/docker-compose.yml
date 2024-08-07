@@ -68,6 +68,16 @@ services:
     networks:
       - workshop-micro-serv-docker
 
+  gateway_serv:
+    build:
+    #      context: ../MicroserviceApiGateway
+    #      dockerfile: Dockerfile
+    image: davechedjoun/gateway-serv:latest
+    ports:
+      - 8082:8082
+    networks:
+      - workshop-micro-serv-docker
+
 
 networks:
   workshop-micro-serv-docker:
