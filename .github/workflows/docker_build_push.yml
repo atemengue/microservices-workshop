@@ -40,7 +40,7 @@ jobs:
       - name: Build and push inventory-serv image
         uses: docker/build-push-action@v5
         with:
-          context: ./InventoryManagement
+          context: ./InventoryManagament
           push: true
           tags: atemengue/inventory-serv:latest
 
