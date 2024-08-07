@@ -26,27 +26,27 @@ jobs:
       - name: Build and push product-serv image
         uses: docker/build-push-action@v5
         with:
-          context: ../ProductManagement
+          context: ./ProductManagement
           push: true
           tags: davechedjoun/product-serv:latest
 
       - name: Build and push order-serv image
         uses: docker/build-push-action@v5
         with:
-          context: ../OrderManagement
+          context: ./OrderManagement
           push: true
           tags: davechedjoun/order-serv:latest
 
       - name: Build and push inventory-serv image
         uses: docker/build-push-action@v5
         with:
-          context: ../InventoryManagement
+          context: ./InventoryManagement
           push: true
           tags: davechedjoun/inventory-serv:latest
 
       - name: Build and push payment-serv image
         uses: docker/build-push-action@v5
         with:
-          context: ../PaymentManagement
+          context: ./PaymentManagement
           push: true
           tags: davechedjoun/payment-serv:latest
