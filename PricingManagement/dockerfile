@@ -1,0 +1,23 @@
+# Utilise l'image PHP avec FPM
+FROM php:8.1-fpm
+
+# Installer les dépendances et les extensions PHP nécessaires
+RUN apt-get update && apt-get install -y \
+libpq-dev \
+&& docker-php-ext-install pdo pdo_pgsql
+
+# Copier le code source de l'application dans le conteneur
+COPY . /var/www
+
+# Définir le répertoire de travail
+WORKDIR /var/www
+
+# Installer les dépendances de Composer
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+RUN composer install
+
+# Commande pour lancer l'application Laravel (en développement, pour production utilisez un serveur comme nginx)
+CMD ["php", "artisan", "serve", "--host=0.0.0.0", "--port=3004"]
+
+# Expose le port pour le serveur Laravel
+EXPOSE 3004
