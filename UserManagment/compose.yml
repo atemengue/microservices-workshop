@@ -10,7 +10,6 @@ services:
       dockerfile: Dockerfile
     container_name: userauth
     depends_on: 
-      - gateway
       - dbuser
     ports:
       - "4001:4001" 
