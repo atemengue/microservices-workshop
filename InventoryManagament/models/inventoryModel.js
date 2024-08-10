@@ -20,9 +20,9 @@ const mongoose = require('mongoose');
  *          type: number
  *          description: the quantity of the product
  *       example:
- *         id: 66a50c53ccb82f368e1c4ac6
- *         quantity: 120
- *         productId: 1
+ *         id: 66b74725c5a777422cda5c81
+ *         quantity: 20
+ *         productId: 66b74725c5a777422cda9c81
  */
 
 const InventorySchema = new mongoose.Schema({
