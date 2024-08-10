@@ -45,6 +45,7 @@ const produtSchema = new mongoose.Schema({
     type: String
   },
   description: String,
+  imageUrl: String,
   price: Number,
   stock: Number,
   categoryId: {

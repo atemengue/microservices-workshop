@@ -14,3 +14,4 @@ GET http://localhost:3000/categories  HTTP/1.1
 
 ### GET CATEGORIES
 GET http://localhost:3000/category/66a50797f2506fc80a27b574  HTTP/1.1
+  1`  

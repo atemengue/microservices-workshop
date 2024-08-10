@@ -2,11 +2,16 @@ const express = require("express");
 const bodyParser = require('body-parser');
 const ProductApiRoutes = require('./routes/product');
 const categoryApiRoutes = require('./routes/category');
+const seedData = require('./data/seedData');
 
 // init express app
 const app = express();
 
 app.use(bodyParser.json());
+
+
+// load the products and categories data
+seedData();
 
 
 // configure swagger
