@@ -5,7 +5,7 @@ const router = express.Router();
 
 /**
  * @swagger
- * /inventory/{productId}:
+ * /api/inventory/{productId}:
  *   get:
  *     summary: Check quantity of Products
  *     tags: [Inventory]
@@ -26,7 +26,7 @@ const router = express.Router();
  *       500:
  *         description: Internal server error.
  */
-router.get('/inventory/:productId', async (req, res) => {
+router.get('/api/inventory/:productId', async (req, res) => {
   try {
 
     // find inventory and return quanity

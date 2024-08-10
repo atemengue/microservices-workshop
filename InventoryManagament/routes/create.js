@@ -5,7 +5,7 @@ const router = express.Router();
 
 /**
  * @swagger
- * /inventory:
+ * /api/inventory:
  *   post:
  *     summary: Create a new Inventory.
  *     tags: [Inventory]
@@ -25,7 +25,7 @@ const router = express.Router();
  *       500:
  *         description: Internal server error.
  */
-router.post('/inventory', async (req, res) => {
+router.post('/api/inventory', async (req, res) => {
   try {
 
     // create inventory

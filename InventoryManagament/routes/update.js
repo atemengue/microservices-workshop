@@ -4,7 +4,7 @@ const router = express.Router();
 
 /**
  * @swagger
- * /inventory/{productId}:
+ * /api/inventory/{productId}:
  *   put:
  *     summary: Update a inventory by ID of the product.
  *     tags: [Inventory]
@@ -32,7 +32,7 @@ const router = express.Router();
  *         description: Internal server error.
  */
 
-router.put('/inventory/:productId', async (req, res) => {
+router.put('/api/inventory/:productId', async (req, res) => {
   const id = req.params.productId;
   const data = req.body;
   try {

@@ -1,12 +1,16 @@
 const express = require("express");
 const bodyParser = require('body-parser');
 const InventoryApiRoutes = require('./routes');
+const seedData = require("./data/seedData");
 
 // init express app
 const app = express();
 
 app.use(bodyParser.json());
 
+
+// seed data Inventory Database
+seedData();
 
 // configure swagger
 require('./swagger')(app)
