@@ -7,7 +7,7 @@ const router = express.Router();
 
 /**
  * @swagger
- * /product:
+ * /api/product:
  *   post:
  *     summary: Create a new product.
  *     tags: [Product]
@@ -27,7 +27,7 @@ const router = express.Router();
  *       500:
  *         description: Internal server error.
  */
-router.post('/product', async (req, res) => {
+router.post('/api/product', async (req, res) => {
   try {
 
     // create product product Management Service

@@ -5,7 +5,7 @@ const router = express.Router();
 
 /**
  * @swagger
- * /product/{id}:
+ * /api/product/{id}:
  *   delete:
  *     summary: Delete a product by ID.
  *     tags: [Product]
@@ -23,7 +23,7 @@ const router = express.Router();
  *         description: Internal server error.
  */
 
-router.delete('/product/:id', async (req, res) => {
+router.delete('/api/product/:id', async (req, res) => {
   try {
     await Product.findByIdAndDelete(req.params.id);
     res.status(204).send()

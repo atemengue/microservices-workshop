@@ -5,7 +5,7 @@ const router = express.Router();
 
 /**
  * @swagger
- * /categories:
+ * /api/categories:
  *   get:
  *     summary: Get all categories.
  *     tags: [Category]
@@ -24,14 +24,14 @@ const router = express.Router();
  *         description: Internal server error.
  */
 
-router.get('/categories', async (req, res) => {
+router.get('/api/categories', async (req, res) => {
   const categories = await Category.find({});
   res.send(categories);
 });
 
 /**
  * @swagger
- * /category/{id}:
+ * /api/category/{id}:
  *   get:
  *     summary: Get a category by ID.
  *     tags: [Category]
@@ -54,7 +54,7 @@ router.get('/categories', async (req, res) => {
  *       500:
  *         description: Internal server error.
  */
-router.get('/category/:id', async (req, res) => {
+router.get('/api/category/:id', async (req, res) => {
   try {
     const category = await Category.findById(req.params.id);
     if (!category) {

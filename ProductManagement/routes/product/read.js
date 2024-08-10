@@ -5,7 +5,7 @@ const router = express.Router();
 
 /**
  * @swagger
- * /products:
+ * /api/products:
  *   get:
  *     summary: Get all products.
  *     tags: [Product]
@@ -24,7 +24,7 @@ const router = express.Router();
  *         description: Internal server error.
  */
 
-router.get('/products', async (req, res) => {
+router.get('/api/products', async (req, res) => {
   const products = await Product.find({}).populate('categoryId')
   res.send(products);
 });

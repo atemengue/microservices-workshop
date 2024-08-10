@@ -5,7 +5,7 @@ const router = express.Router();
 
 /**
  * @swagger
- * /category:
+ * /api/category:
  *   post:
  *     summary: Create a new category.
  *     tags: [Category]
@@ -26,7 +26,7 @@ const router = express.Router();
  *         description: Internal server error.
  */
 
-router.post('/category', async (req, res) => {
+router.post('/api/category', async (req, res) => {
   try {
     const category = new Category(req.body);
     await category.save();
