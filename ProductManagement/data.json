@@ -1,0 +1,144 @@
+{
+  "categories": [
+    {
+      "name": "Mobile Phones",
+      "description": "Explore a wide range of smartphones from top brands with the latest features and specifications.",
+      "imageUrl": "https://example.com/images/mobile-phones.jpg",
+      "products": [
+        {
+          "name": "iPhone 14 Pro",
+          "description": "The latest iPhone with A16 Bionic chip, 128GB storage, and advanced camera features.",
+          "price": 999.99,
+          "stock": 50,
+          "imageUrl": "https://example.com/images/iphone-14-pro.jpg"
+        },
+        {
+          "name": "Samsung Galaxy S23",
+          "description": "High-performance smartphone with an Exynos processor, 256GB storage, and a 108MP camera.",
+          "price": 899.99,
+          "stock": 30,
+          "imageUrl": "https://example.com/images/galaxy-s23.jpg"
+        },
+        {
+          "name": "Google Pixel 7",
+          "description": "Google's flagship phone with Tensor G2 chip, 128GB storage, and a stunning camera experience.",
+          "price": 799.99,
+          "stock": 40,
+          "imageUrl": "https://example.com/images/pixel-7.jpg"
+        }
+      ]
+    },
+    {
+      "name": "Laptops",
+      "description": "Find the perfect laptop for work, gaming, or everyday use, featuring the latest processors and graphics.",
+      "imageUrl": "https://example.com/images/laptops.jpg",
+      "products": [
+        {
+          "name": "MacBook Pro 16\"",
+          "description": "Powerful laptop with M1 Pro chip, 16GB RAM, 512GB SSD, and Retina display.",
+          "price": 2499.99,
+          "stock": 20,
+          "imageUrl": "https://example.com/images/macbook-pro-16.jpg"
+        },
+        {
+          "name": "Dell XPS 13",
+          "description": "Ultra-thin laptop with Intel i7 processor, 16GB RAM, 1TB SSD, and InfinityEdge display.",
+          "price": 1499.99,
+          "stock": 25,
+          "imageUrl": "https://example.com/images/dell-xps-13.jpg"
+        },
+        {
+          "name": "HP Spectre x360",
+          "description": "Versatile 2-in-1 laptop with Intel i7, 16GB RAM, 512GB SSD, and a stunning OLED display.",
+          "price": 1399.99,
+          "stock": 15,
+          "imageUrl": "https://example.com/images/hp-spectre-x360.jpg"
+        }
+      ]
+    },
+    {
+      "name": "Tablets",
+      "description": "Discover the best tablets for entertainment, productivity, and creativity, from top brands.",
+      "imageUrl": "https://example.com/images/tablets.jpg",
+      "products": [
+        {
+          "name": "iPad Pro 12.9\"",
+          "description": "Apple's most advanced iPad with M2 chip, 256GB storage, and a Liquid Retina display.",
+          "price": 1199.99,
+          "stock": 30,
+          "imageUrl": "https://example.com/images/ipad-pro.jpg"
+        },
+        {
+          "name": "Samsung Galaxy Tab S8",
+          "description": "High-performance Android tablet with a 12.4-inch AMOLED display and S Pen support.",
+          "price": 849.99,
+          "stock": 35,
+          "imageUrl": "https://example.com/images/galaxy-tab-s8.jpg"
+        },
+        {
+          "name": "Microsoft Surface Pro 9",
+          "description": "Versatile 2-in-1 tablet with Intel i5, 8GB RAM, and 128GB SSD, perfect for work and play.",
+          "price": 999.99,
+          "stock": 20,
+          "imageUrl": "https://example.com/images/surface-pro-9.jpg"
+        }
+      ]
+    },
+    {
+      "name": "Smartwatches",
+      "description": "Stay connected and track your fitness with the latest smartwatches from top brands.",
+      "imageUrl": "https://example.com/images/smartwatches.jpg",
+      "products": [
+        {
+          "name": "Apple Watch Series 8",
+          "description": "Advanced health tracking, ECG, and blood oxygen monitoring in a stylish, durable design.",
+          "price": 399.99,
+          "stock": 60,
+          "imageUrl": "https://example.com/images/apple-watch-8.jpg"
+        },
+        {
+          "name": "Samsung Galaxy Watch 5",
+          "description": "Comprehensive fitness tracking and seamless integration with Samsung devices.",
+          "price": 299.99,
+          "stock": 50,
+          "imageUrl": "https://example.com/images/galaxy-watch-5.jpg"
+        },
+        {
+          "name": "Fitbit Versa 4",
+          "description": "Fitness and wellness tracker with heart rate monitoring, sleep tracking, and 6-day battery life.",
+          "price": 199.99,
+          "stock": 70,
+          "imageUrl": "https://example.com/images/fitbit-versa-4.jpg"
+        }
+      ]
+    },
+    {
+      "name": "Headphones",
+      "description": "Experience superior sound quality with the latest headphones, from noise-canceling to wireless options.",
+      "imageUrl": "https://example.com/images/headphones.jpg",
+      "products": [
+        {
+          "name": "Sony WH-1000XM5",
+          "description": "Industry-leading noise-canceling headphones with exceptional sound quality and comfort.",
+          "price": 349.99,
+          "stock": 40,
+          "imageUrl": "https://example.com/images/sony-wh-1000xm5.jpg"
+        },
+        {
+          "name": "Bose QuietComfort 45",
+          "description": "Comfortable and stylish noise-canceling headphones with crystal-clear audio performance.",
+          "price": 329.99,
+          "stock": 35,
+          "imageUrl": "https://example.com/images/bose-qc45.jpg"
+        },
+        {
+          "name": "Apple AirPods Max",
+          "description": "Over-ear headphones with high-fidelity sound, Active Noise Cancellation, and spatial audio.",
+          "price": 549.99,
+          "stock": 25,
+          "imageUrl": "https://example.com/images/airpods-max.jpg"
+        }
+      ]
+    }
+  ]
+}
