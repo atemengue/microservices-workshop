@@ -1,0 +1,8 @@
+POST http://localhost:3001/order/product HTTP/1.1
+Content-Type:  application/json
+
+{
+  "name": "Dell XPS 13",
+  "description": "Compact and powerful laptop with a 13.4-inch InfinityEdge display, Intel Core i7 processor, and 16GB RAM.",
+  "price": 650000
+}
