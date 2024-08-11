@@ -1,0 +1,30 @@
+version:  "2"
+services:
+  userauth:
+    image: userauth
+    # pull_policy: if_not_present
+    pull_policy: never
+
+    build: 
+      context: ./user
+      dockerfile: Dockerfile
+    container_name: userauth
+    depends_on: 
+      - dbuser
+    ports:
+      - "4001:4001" 
+    networks:
+      - mynet
+  dbuser:
+    image: mongo
+    # pull_policy: if_not_present
+    pull_policy: never
+
+    container_name: dbuser
+    ports:
+      - "27017:27017"
+    networks:
+      - mynet
+
+networks:
+  mynet:
