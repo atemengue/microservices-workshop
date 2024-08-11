@@ -1,11 +1,11 @@
 const express = require('express');
-const Order = require('../models/orderModel');
+const Order = require('../../models/orderModel');
 
 const router = express.Router();
 
 /**
  * @swagger
- * order/{id}:
+ * /api/order/{id}:
  *   put:
  *     summary: Update a Order by ID.
  *     tags: [Order]
@@ -33,7 +33,7 @@ const router = express.Router();
  *         description: Internal server error.
  */
 
-router.put('/order/:id', async (req, res) => {
+router.put('/api/order/:id', async (req, res) => {
   const id = req.params.id;
   const data = req.body;
   try {

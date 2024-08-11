@@ -1,12 +1,12 @@
 const express = require('express');
-const Order = require('../models/orderModel');
-const Product = require('../models/productModel');
+const Order = require('../../models/orderModel');
+const Product = require('../../models/productModel');
 
 const router = express.Router();
 
 /**
  * @swagger
- * /order:
+ * /api/order:
  *   post:
  *     summary: Create a new order.
  *     tags: [Order]
@@ -26,7 +26,7 @@ const router = express.Router();
  *       500:
  *         description: Internal server error.
  */
-router.post('/order', async (req, res) => {
+router.post('/api/order', async (req, res) => {
   try {
     const order = new Order(req.body);
     await order.save();
@@ -38,7 +38,7 @@ router.post('/order', async (req, res) => {
 });
 
 // create product order Routes
-router.post('/order/product', async (req, res) => {
+router.post('/api/order/product', async (req, res) => {
   try {
     const product = await Product.create(req.body)
     res.status(201).send({ product, isCreated: true })

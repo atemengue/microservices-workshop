@@ -12,16 +12,16 @@ const options = {
 
     servers: [
       {
-        url: "https://propelize.com",
-        description: "Production server"
-      },
-      {
         url: "http://localhost:3001",
         description: "Local server"
+      },
+      {
+        url: "https://propelize.com",
+        description: "Production server"
       }
     ]
   },
-  apis: ["./models/*", "./routes/*"], // files containing annotations as above
+  apis: ["./models/*", "./routes/order/*"], // files containing annotations as above
 }
 
 const specs = swaggerJsdoc(options);

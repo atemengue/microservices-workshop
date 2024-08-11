@@ -1,11 +1,11 @@
 const express = require('express');
-const Order = require('../models/orderModel');
+const Order = require('../../models/orderModel');
 
 const router = express.Router();
 
 /**
  * @swagger
- * /orders:
+ * /api/orders:
  *   get:
  *     summary: Get all orders.
  *     tags: [Order]
@@ -24,14 +24,14 @@ const router = express.Router();
  *         description: Internal server error.
  */
 
-router.get('/orders', async (req, res) => {
+router.get('/api/orders', async (req, res) => {
   const orders = await Order.find({}).populate('products')
   res.send(orders);
 });
 
 /**
  * @swagger
- * /order/{id}:
+ * /api/order/{id}:
  *   get:
  *     summary: Get a order by ID.
  *     tags: [Order]

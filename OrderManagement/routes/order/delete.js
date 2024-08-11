@@ -1,11 +1,11 @@
 const express = require('express');
-const Order = require('../models/orderModel');
+const Order = require('../../models/orderModel');
 
 const router = express.Router();
 
 /**
  * @swagger
- * /order/{id}:
+ * /api/order/{id}:
  *   delete:
  *     summary: Delete a Order by ID.
  *     tags: [Order]
@@ -23,7 +23,7 @@ const router = express.Router();
  *         description: Internal server error.
  */
 
-router.delete('/order/:id', async (req, res) => {
+router.delete('/api/order/:id', async (req, res) => {
   try {
     await Order.findByIdAndDelete(req.params.id);
     res.status(204).send()
