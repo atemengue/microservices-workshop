@@ -1,7 +1,7 @@
 const express = require("express");
 const bodyParser = require('body-parser');
 const InventoryApiRoutes = require('./routes');
-const seedData = require("./data/seedData");
+const seedData = require('./data/seedData');
 
 // init express app
 const app = express();
