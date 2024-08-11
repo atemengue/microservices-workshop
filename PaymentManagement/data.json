@@ -1,0 +1,72 @@
+[
+  {
+    "paymentId": 1,
+    "orderId": "ORD123456",
+    "userId": "USR001",
+    "payment_status": 0,
+    "amount": 15000
+  },
+  {
+    "paymentId": 2,
+    "orderId": "ORD123457",
+    "userId": "USR002",
+    "payment_status": 1,
+    "amount": 25000
+  },
+  {
+    "paymentId": 3,
+    "orderId": "ORD123458",
+    "userId": "USR003",
+    "payment_status": 2,
+    "amount": 10000
+  },
+  {
+    "paymentId": 4,
+    "orderId": "ORD123459",
+    "userId": "USR004",
+    "payment_status": 2,
+    "amount": 5000
+  },
+  {
+    "paymentId": 5,
+    "orderId": "ORD123460",
+    "userId": "USR005",
+    "payment_status": 0,
+    "amount": 30000
+  },
+  {
+    "paymentId": 6,
+    "orderId": "ORD123461",
+    "userId": "USR006",
+    "payment_status": 1,
+    "amount": 20000
+  },
+  {
+    "paymentId": 7,
+    "orderId": "ORD123462",
+    "userId": "USR007",
+    "payment_status": 0,
+    "amount": 12000
+  },
+  {
+    "paymentId": 8,
+    "orderId": "ORD123463",
+    "userId": "USR008",
+    "payment_status": 1,
+    "amount": 40000
+  },
+  {
+    "paymentId": 9,
+    "orderId": "ORD123464",
+    "userId": "USR009",
+    "payment_status": 1,
+    "amount": 8000
+  },
+  {
+    "paymentId": 10,
+    "orderId": "ORD123465",
+    "userId": "USR010",
+    "payment_status": 2,
+    "amount": 18000
+  }
+]
