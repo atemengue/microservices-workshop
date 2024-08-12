@@ -1,0 +1,18 @@
+### Route for add a new payment
+POST http://localhost:3003/api/payment
+Content-Type:  application/json
+
+{
+  "orderId": "order123",
+  "amount": 500 ,
+  "userId": "user1"
+}
+
+### Route for get payment by id
+
+GET http://localhost:3003/api/payment/1
+
+
+### Route for get all payments for a user
+
+GET http://localhost:3003/api/payments/user/user1

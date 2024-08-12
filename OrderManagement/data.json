@@ -1,0 +1,124 @@
+{
+  "categories": [
+    {
+      "name": "Mobile Phones",
+      "description": "Explore a wide range of smartphones from top brands with the latest features and specifications.",
+      "products": [
+        {
+          "name": "iPhone 14 Pro",
+          "description": "The latest iPhone with A16 Bionic chip, 128GB storage, and advanced camera features.",
+          "price": 999.99,
+          "stock": 50
+        },
+        {
+          "name": "Samsung Galaxy S23",
+          "description": "High-performance smartphone with an Exynos processor, 256GB storage, and a 108MP camera.",
+          "price": 899.99,
+          "stock": 30
+        },
+        {
+          "name": "Google Pixel 7",
+          "description": "Google's flagship phone with Tensor G2 chip, 128GB storage, and a stunning camera experience.",
+          "price": 799.99,
+          "stock": 40
+        }
+      ]
+    },
+    {
+      "name": "Laptops",
+      "description": "Find the perfect laptop for work, gaming, or everyday use, featuring the latest processors and graphics.",
+      "products": [
+        {
+          "name": "MacBook Pro 16\"",
+          "description": "Powerful laptop with M1 Pro chip, 16GB RAM, 512GB SSD, and Retina display.",
+          "price": 2499.99,
+          "stock": 20
+        },
+        {
+          "name": "Dell XPS 13",
+          "description": "Ultra-thin laptop with Intel i7 processor, 16GB RAM, 1TB SSD, and InfinityEdge display.",
+          "price": 1499.99,
+          "stock": 25
+        },
+        {
+          "name": "HP Spectre x360",
+          "description": "Versatile 2-in-1 laptop with Intel i7, 16GB RAM, 512GB SSD, and a stunning OLED display.",
+          "price": 1399.99,
+          "stock": 15
+        }
+      ]
+    },
+    {
+      "name": "Tablets",
+      "description": "Discover the best tablets for entertainment, productivity, and creativity, from top brands.",
+      "products": [
+        {
+          "name": "iPad Pro 12.9\"",
+          "description": "Apple's most advanced iPad with M2 chip, 256GB storage, and a Liquid Retina display.",
+          "price": 1199.99,
+          "stock": 30
+        },
+        {
+          "name": "Samsung Galaxy Tab S8",
+          "description": "High-performance Android tablet with a 12.4-inch AMOLED display and S Pen support.",
+          "price": 849.99,
+          "stock": 35
+        },
+        {
+          "name": "Microsoft Surface Pro 9",
+          "description": "Versatile 2-in-1 tablet with Intel i5, 8GB RAM, and 128GB SSD, perfect for work and play.",
+          "price": 999.99,
+          "stock": 20
+        }
+      ]
+    },
+    {
+      "name": "Smartwatches",
+      "description": "Stay connected and track your fitness with the latest smartwatches from top brands.",
+      "products": [
+        {
+          "name": "Apple Watch Series 8",
+          "description": "Advanced health tracking, ECG, and blood oxygen monitoring in a stylish, durable design.",
+          "price": 399.99,
+          "stock": 60
+        },
+        {
+          "name": "Samsung Galaxy Watch 5",
+          "description": "Comprehensive fitness tracking and seamless integration with Samsung devices.",
+          "price": 299.99,
+          "stock": 50
+        },
+        {
+          "name": "Fitbit Versa 4",
+          "description": "Fitness and wellness tracker with heart rate monitoring, sleep tracking, and 6-day battery life.",
+          "price": 199.99,
+          "stock": 70
+        }
+      ]
+    },
+    {
+      "name": "Headphones",
+      "description": "Experience superior sound quality with the latest headphones, from noise-canceling to wireless options.",
+      "products": [
+        {
+          "name": "Sony WH-1000XM5",
+          "description": "Industry-leading noise-canceling headphones with exceptional sound quality and comfort.",
+          "price": 349.99,
+          "stock": 40
+        },
+        {
+          "name": "Bose QuietComfort 45",
+          "description": "Comfortable and stylish noise-canceling headphones with crystal-clear audio performance.",
+          "price": 329.99,
+          "stock": 35
+        },
+        {
+          "name": "Apple AirPods Max",
+          "description": "Over-ear headphones with high-fidelity sound, Active Noise Cancellation, and spatial audio.",
+          "price": 549.99,
+          "stock": 25
+        }
+      ]
+    }
+  ]
+}
