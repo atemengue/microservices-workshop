@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: inventory
-          image: davechedjoun/inventory-serv:latest
+          image: atemengue/inventory-serv:latest
           ports:
             - containerPort : 3002
       restartPolicy: Always

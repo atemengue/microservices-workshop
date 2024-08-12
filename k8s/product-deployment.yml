@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: product
-          image: davechedjoun/product-serv:latest
+          image: atemengue/product-serv:latest
           ports:
             - containerPort : 3000
       restartPolicy: Always

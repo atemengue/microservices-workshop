@@ -1,25 +1,25 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: order-deployment
+  name: mongo-deployment
   labels:
-    app: order
+    app: mongodb
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: order
+      app: mongodb
   template:
     metadata:
-      name: order-pod
+      name: mongo-pod
       labels:
-        app: order
+        app: mongodb
     spec:
       containers:
-        - name: order
-          image: atemengue/order-serv:latest
+        - name: mongodb
+          image: mongo
           ports:
-            - containerPort : 3001
+            - containerPort : 27017
       restartPolicy: Always
 
 ---
@@ -27,11 +27,11 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: order-clusterip
+  name: mongodb
 spec:
   type: ClusterIP
   selector:
-    app: order
+    app: mongodb
   ports:
-    - port: 3001
-      targetPort: 3001
+    - port: 27017
+      targetPort: 27017

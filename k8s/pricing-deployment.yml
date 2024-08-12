@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: pricing
-          image: davechedjoun/pricing-serv:latest
+          image: atemengue/pricing-serv:latest
           ports:
             - containerPort : 3004
       restartPolicy: Always

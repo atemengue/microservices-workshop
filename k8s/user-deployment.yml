@@ -1,25 +1,25 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: order-deployment
+  name: user-deployment
   labels:
-    app: order
+    app: user
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: order
+      app: user
   template:
     metadata:
-      name: order-pod
+      name: user-pod
       labels:
-        app: order
+        app: user
     spec:
       containers:
-        - name: order
-          image: atemengue/order-serv:latest
+        - name: user
+          image: atemengue/user-serv:latest
           ports:
-            - containerPort : 3001
+            - containerPort : 3004
       restartPolicy: Always
 
 ---
@@ -27,11 +27,11 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: order-clusterip
+  name: user-clusterip
 spec:
   type: ClusterIP
   selector:
-    app: order
+    app: user
   ports:
-    - port: 3001
-      targetPort: 3001
+    - port: 3004
+      targetPort: 3004

@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: payment
-          image: payment/payment-serv:latest
+          image: atemengue/payment-serv:latest
           ports:
             - containerPort : 3000
       restartPolicy: Always
