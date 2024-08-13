@@ -4,10 +4,13 @@ const exchange = "topic_logs";
 const queues = ["order", "payment", "products"];
 const deadLetterExchange = "dlx";
 const deadLetterQueues = ["order_dead", "payment_dead", "products_dead"]
+const amqpUrl = process.env.AMQP_URL || 'amqp://rabbitmq';
+
 
 async function setupRabbitMQ() {
   try {
-    const connection = await amqp.connect("amqp://user:password@rabbitmq");
+
+    const connection = await amqp.connect(amqpUrl);
     const channel = await connection.createChannel();
 
     await channel.assertExchange(exchange, "topic", { durable: true });

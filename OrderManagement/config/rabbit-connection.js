@@ -1,21 +1,21 @@
 const amqp = require('amqplib');
+const amqpUrl = process.env.AMQP_URL || 'amqp://localhost:5672';
 
-let connection;
-
-async function connectAndStartUp() {
+async function connect() {
   try {
     console.log("Trying to connect ....");
-    connection = await amqp.connect("amqp://user:password@rabbitmq");
-    channel = await connection.createChannel();
+    const connection = await amqp.connect(amqpUrl);
+    const channel = await connection.createChannel();
 
     console.log("Connected to RabbitMQ Producer.");
-   
+    return channel;
+
   } catch (error) {
     console.log(error.message);
     if (error.message.includes("connect ECONNREFUSED")) {
-      setTimeout(() => connectAndStartUp(), 5000);
+      setTimeout(() => connect(), 5000);
     }
   }
 }
 
-module.exports = { connectAndStartUp, connection }
+module.exports = { connect }
