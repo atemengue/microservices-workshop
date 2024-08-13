@@ -5,8 +5,6 @@ const config = require('../../config');
 const axios = require('axios')
 const mongoose = require('mongoose')
 
-
-
 const router = express.Router();
 
 /**
@@ -75,40 +73,10 @@ router.post('/api/order', async (req, res) => {
   } catch (error) {
     console.log(error)
     res.status(500).error
-
   }
 
-  //res.send('ok')
-
-  // // step2: Process payment
-  // const payementSuccessful = await processPayement(
-  //   req.body.totalPrice,
-  //   req.body.paymentMethod
-  // );
-
-  // if (!payementSuccessful) {
-  //   return res.status(402).send({ message: "Payement failed " });
-  // }
-
-  // // step3: Create Order
-  // const order = await Order.create(req.body);
-
-  // // step4: Update Inventory
-  // await updateInventory(product, -quantity);
-
-  // res.status(201).send(order);
 });
-
-// router.post('/api/order', async (req, res) => {
-//   try {
-//     const order = new Order(req.body);
-//     await order.save();
-//     res.status(201).send(order)
-//   } catch (error) {
-//     res.status(500).send(error)
-//   }
-
-// });
+;
 
 // create product order Routes
 router.post('/api/order/product', async (req, res) => {
