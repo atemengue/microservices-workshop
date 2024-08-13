@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const { app } = require('./app');
+const { connectAndStartUp } = require('./config/rabbit-connection');
 
 const options = {
   serverSelectionTimeoutMS: 5000,
@@ -21,4 +22,8 @@ app.listen(PORT, () => {
   console.log(`Order Management Services Service is running on port ${PORT}`)
 });
 
+// start node servers
 start();
+
+// start connection rabbitMQ
+connectAndStartUp()
