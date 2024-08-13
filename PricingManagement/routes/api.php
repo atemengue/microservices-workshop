@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\PricingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,6 +19,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('/payment', [PaymentController::class, 'createPayment']);
-Route::get('/payment/{paymentId}', [PaymentController::class, 'getPaymentStatus']);
-Route::get('/payments/user/{userId}', [PaymentController::class, 'listUserPayments']);
+// Route::post('/pricing/calculate', [PricingController::class, 'calculatePrice']);
+
+Route::post('/pricing/calculate', [PricingController::class, 'calculate']);

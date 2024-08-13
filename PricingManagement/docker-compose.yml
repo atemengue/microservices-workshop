@@ -4,7 +4,7 @@ services:
   app:
     build: .
     ports:
-      - "3004:3004"
+      - "8000:8000"  # Assurez-vous que c'est bien 8000
     volumes:
       - .:/var/www
     environment:

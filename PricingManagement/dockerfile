@@ -17,7 +17,7 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 RUN composer install
 
 # Commande pour lancer l'application Laravel (en développement, pour production utilisez un serveur comme nginx)
-CMD ["php", "artisan", "serve", "--host=0.0.0.0", "--port=3004"]
+CMD ["php", "artisan", "serve", "--host=0.0.0.0", "--port=8000"]
 
 # Expose le port pour le serveur Laravel
-EXPOSE 3004
+EXPOSE 8000

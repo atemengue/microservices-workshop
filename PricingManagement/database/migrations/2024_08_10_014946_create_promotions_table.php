@@ -10,12 +10,11 @@ return new class extends Migration {
      */
     public function up(): void
     {
-        Schema::create('payments', function (Blueprint $table) {
-            $table->id('paymentId'); // Utilisez la méthode `id()` pour un auto-increment
-            $table->string('orderId');
-            $table->string('userId');
-            $table->string('payment_status');
-            $table->decimal('amount', 10, 2);
+        Schema::create('promotions', function (Blueprint $table) {
+            $table->id();
+            $table->string('promotion_code')->unique();
+            $table->decimal('discount', 8, 2);
+            $table->integer('pourcentage');
             $table->timestamps();
         });
     }
@@ -25,6 +24,6 @@ return new class extends Migration {
      */
     public function down(): void
     {
-        Schema::dropIfExists('payments');
+        Schema::dropIfExists('promotions');
     }
 };
