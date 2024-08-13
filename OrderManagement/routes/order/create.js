@@ -54,12 +54,7 @@ router.post('/api/order', async (req, res) => {
     // }
 
     // step3: Create Order
-    const order = new Order({
-      orderDate,
-      userId: new mongoose.Types.ObjectId(userId),
-      status,
-      productId: new mongoose.Types.ObjectId(productId)
-    });
+    const order = new Order(req.body);
 
     await order.save();
 
