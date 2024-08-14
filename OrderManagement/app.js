@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 const orderApiROutes = require('./routes');
 const seedData = require('./data/SeedData');
 const morgan = require('morgan');
+const orderEventRoutes = require("./events-pub");
 
 
 // init express app
@@ -40,6 +41,7 @@ app.get("/", (req, res) => {
 // products routes API
 orderApiROutes(app);
 
-// category routes API
+orderEventRoutes(app);
+
 
 module.exports = { app }
