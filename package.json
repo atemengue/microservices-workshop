@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "supertest": "^7.0.0"
+  },
+  "devDependencies": {
+    "vitest": "^2.0.5"
+  }
+}
