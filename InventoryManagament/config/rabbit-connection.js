@@ -1,4 +1,4 @@
-import amqp from 'amqplib';
+const amqp = require("amqplib");
 const amqpUrl = process.env.AMQP_URL || 'amqp://localhost:5672';
 
 const queue = "order";
@@ -13,7 +13,6 @@ const connect = async () => {
     })
 
     const channel = await connection.createChannel();
-    await channel.assertQueue(queue, { durable: true });
     console.log("Connected to RabbitMQ Consumer.");
     return channel;
 
