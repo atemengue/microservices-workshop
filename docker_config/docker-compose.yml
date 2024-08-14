@@ -1,0 +1,62 @@
+services:
+  db:
+    image: postgres
+    ports:
+      - 5434:5432
+    environment:
+      POSTGRES_USER: ${DATABASE_USERNAME}
+      POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
+      POSTGRES_DB: ${DATABASE_NAME}
+    networks:
+      - workshop-micro-serv-docker
+
+  mongodb:
+    image: mongo
+    ports:
+      - 27017:27017
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_ROOT_USERNAME}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_ROOT_PASSWORD}
+    networks:
+      - workshop-micro-serv-docker
+
+  order_serv:
+    #   build:
+    #      context: ../OrderManagement
+    #      dockerfile: Dockerfile
+    image: atemengue/order-serv:latest
+    ports:
+      - 3001:3001
+    depends_on:
+      - mongodb
+    networks:
+      - workshop-micro-serv-docker
+
+  inventory_serv:
+    #    build:
+    #      context: ../InventoryManagament
+    #      dockerfile: Dockerfile
+    image: atemengue/inventory-serv:latest
+    ports:
+      - 3002:3002
+    depends_on:
+      - mongodb
+    networks:
+      - workshop-micro-serv-docker
+
+  payment_serv:
+    #    build:
+    #      context: ../PaymentManagement
+    #      dockerfile: Dockerfile
+    image: atemengue/payment-serv:latest
+    ports:
+      - 3003:3003
+    depends_on:
+      - db
+    networks:
+      - workshop-micro-serv-docker
+
+
+
+networks:
+  workshop-micro-serv-docker:
