@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const { app } = require('./app');
+const { startConsumer } = require('./subscriber/orderQueue');
 
 const options = {
   serverSelectionTimeoutMS: 5000,
@@ -15,6 +16,11 @@ const start = async () => {
     console.error('Database connection error:', error);
   }
 }
+
+
+// Start RabbitMQ Consumer
+startConsumer();
+
 
 const PORT = 3002;
 app.listen(PORT, () => {

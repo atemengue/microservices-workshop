@@ -1,29 +1,31 @@
-const amqp = require('amqplib');
+import amqp from 'amqplib';
+const amqpUrl = process.env.AMQP_URL || 'amqp://localhost:5672';
 
-let channel;
-let connection;
+const queue = "order";
 
-const connectToBroker = async () => {
+const connect = async () => {
   try {
 
-    connection = await amqp.connect("amqp://user:password@rabbitmq");
+    console.log("Trying to connect consumer ....");
+    let connection = await amqp.connect(amqpUrl);
     process.once('SIGINT', () => {
       connection.close();
     })
-    channel = await connection.createChannel();
 
+    const channel = await connection.createChannel();
+    await channel.assertQueue(queue, { durable: true });
     console.log("Connected to RabbitMQ Consumer.");
+    return channel;
+
   } catch (error) {
     console.warn(error)
     console.log(error.message);
     if (error.message.includes("connect ECONNREFUSED")) {
-      setTimeout(() => connectToBroker(), 5000);
+      setTimeout(() => connect(), 5000);
     } else if (error.message.includes("Channel is not etablished.")) {
-      setTimeout(() => connectToBroker())
+      setTimeout(() => connect())
     }
   }
-
-
 }
 
-module.exports = { connectToBroker, channel, connection }
+module.exports = { connect }

@@ -65,8 +65,8 @@ router.post('/api/order', async (req, res) => {
 
     const message = JSON.stringify({
       action: "inventoryUpdated",
+      productId: productId,
       payload: {
-        productId: productId,
         quantity: -quantity,
       }
     });
@@ -93,8 +93,6 @@ router.post('/api/order/product', async (req, res) => {
     res.status(500).send({ error, isCreated: false })
   }
 })
-
-
 
 const createOrderRouter = router
 
