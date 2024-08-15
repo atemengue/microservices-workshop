@@ -40,8 +40,7 @@ async function seedData() {
 
   ///await Category.deleteMany();
   // await Product.deleteMany();
-  //await User.deleteMany();
-
+  // await User.deleteMany();
 
   categories.map(async (item, index) => {
 
@@ -53,13 +52,6 @@ async function seedData() {
       imageUrl: item.imageUrl
     };
 
-    // const category = new Category(category_value);
-
-    //await category.save();
-    // insert into category
-    //const { id } = category;
-
-    // insert into products
     products.map(async (item) => {
       const product = new Product(item);
       await product.save();
@@ -72,8 +64,6 @@ async function seedData() {
   });
 
   console.log("Products and Users data inserted successfully");
-  // await disconnect();
-
 }
 
 module.exports = seedData;

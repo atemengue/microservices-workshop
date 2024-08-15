@@ -3,7 +3,6 @@ const Order = require('../../models/orderModel');
 const Product = require('../../models/productModel');
 const config = require('../../config');
 const axios = require('axios')
-const mongoose = require('mongoose')
 
 const router = express.Router();
 
@@ -40,25 +39,21 @@ router.post('/api/order', async (req, res) => {
 
     if (responseInventory.data.availableQuantity < quantity) {
       return res.status(400).send({ message: "Insufficient stock" });
-    }
+    };
 
-    // // step2: Process payment
-    // const responsePayement = await axios.get(`${config.PAYEMENT_SERVICE}/api/payment`, {
-    //   "orderId": id,
-    //   "amount": amount,
-    //   "userId": userId
-    // });
-
-    // if (!responsePayement.status == '201') {
-    //   return res.status(402).send({ message: "Echec du payement " });
-    // }
-
-    // step3: Create Order
-    const order = new Order(req.body);
-
+    // step2: Create Order
+    console.log(req.body);
+    const order = new Order({
+      productId: productId,
+      userId,
+      orderDate,
+      status,
+      quantity
+    });
+    console.log(order);
     await order.save();
 
-    //step4: Update Inventory
+    //step3: Update Inventory
     await axios.put(`${config.INVENTORY_SERVICE}/api/inventory/${productId}`, {
       quantity: -quantity
     });
@@ -66,12 +61,14 @@ router.post('/api/order', async (req, res) => {
     res.status(201).send(order);
 
   } catch (error) {
-    console.log(error)
-    res.status(500).error
+    console.log(error.message)
+    res.status(500).send({
+      message: error.message
+
+    })
   }
 
 });
-;
 
 // create product order Routes
 router.post('/api/order/product', async (req, res) => {
@@ -82,9 +79,7 @@ router.post('/api/order/product', async (req, res) => {
     console.log(error)
     res.status(500).send({ error, isCreated: false })
   }
-})
-
-
+});
 
 const createOrderRouter = router
 
