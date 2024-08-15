@@ -7,5 +7,3 @@ const config = {
 }
 
 module.exports = config;
-
-export default App 

@@ -53,9 +53,7 @@ router.post('/api/order', async (req, res) => {
     await order.save();
 
     //step3: Update Inventory
-    await axios.put(`${config.INVENTORY_SERVICE}/api/inventory/${productId}`, {
-      quantity: -quantity
-    });
+
 
     res.status(201).send(order);
 
