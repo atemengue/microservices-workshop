@@ -36,8 +36,8 @@ async function seedData() {
 
   await connect();
 
-  await Category.deleteMany();
-  await Product.deleteMany();
+  //await Category.deleteMany();
+  //await Product.deleteMany();
 
 
   categories.map(async (item, index) => {
