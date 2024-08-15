@@ -32,10 +32,9 @@ const router = express.Router();
 router.post('/api/order', async (req, res) => {
   try {
 
-    // Step1: Check Inventory
-    const { productId, quantity, id, amount, userId, orderDate, status } = req.body
+    // TODO
 
-    const responseInventory = await axios.get(`${config.INVENTORY_SERVICE}/api/inventory/${productId}`);
+    // Step1: Check Inventory
 
     if (responseInventory.data.availableQuantity < quantity) {
       return res.status(400).send({ message: "Insufficient stock" });
