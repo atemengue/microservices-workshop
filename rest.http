@@ -42,7 +42,7 @@ Content-Type: application/json
 {
     "productId": "66bde5f500180cfe50379c92",
     "userId": "66bde5f500180cfe50379c9d",
-    "quantity": 20,
+    "quantity": 100,
     "orderDate": "2024-07-27T14:43:35.766Z",
     "status" : "created",
     "amount": 25000
