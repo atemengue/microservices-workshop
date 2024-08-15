@@ -22,6 +22,7 @@ const router = express.Router();
  *       500:
  *         description: Internal server error.
  */
+//TODO: complelez le code pour la suppression du produit
 
 router.delete('/api/product/:id', async (req, res) => {
   try {

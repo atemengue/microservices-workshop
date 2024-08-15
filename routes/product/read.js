@@ -24,10 +24,9 @@ const router = express.Router();
  *         description: Internal server error.
  */
 
-router.get('/api/products', async (req, res) => {
-  const products = await Product.find({}).populate('categoryId')
-  res.send(products);
-});
+//TODO: complelez le code pour la recuperation de la liste des produits
+
+
 
 /**
  * @swagger
@@ -54,20 +53,4 @@ router.get('/api/products', async (req, res) => {
  *       500:
  *         description: Internal server error.
  */
-router.get('/api/product/:id', async (req, res) => {
-  try {
-    const product = await Product.findById(req.params.id);
-    if (!product) {
-      res.status(404).send("product not found");
-    } else {
-      res.send(product);
-    }
-  } catch (error) {
-    res.status(500).send(err);
-  }
-});
-
-
-const readProductRouter = router
-
-module.exports = { readProductRouter };
+//TODO: complelez le code pour la recuperation  d'un produit par son identifiant

@@ -4,12 +4,12 @@ Vous trouverez ci-dessous un ensemble d'exigences fonctionnelles et non fonction
 
 ## Exigences fonctionnelles
 
+#### TODO
+
 1. **Créer un véhicule (CRUD)**
    - Le système doit permettre aux utilisateurs de créer de nouvelles entités de produits avec les informations suivantes :
-     - nom du produit (name)
-     - description (description)
-     - prix (price)
-     - categorie du production (categoryId)
+  #### TODO 1
+
 
 2. **Mise à jour du produit (CRUD)**
    - Les utilisateurs doivent pouvoir mettre à jour les informations existantes sur le [produit], y compris la nom, la description, la categorie et le prix.
@@ -17,8 +17,8 @@ Vous trouverez ci-dessous un ensemble d'exigences fonctionnelles et non fonction
 3. **Suppression d'un véhicule (CRUD)**
    - Les utilisateurs pourront supprimer les enregistrements de produit du système.
 
-4. **Récupération d'un produit par son numéro d'identification
-   - Le système doit fournir un point d'accès permettant de récupérer les détails d'un produit sur la base de l'identifiant interne de l'enregistrement.
+4. **Récupération d'un produit par son numéro d'identification** 
+  #### TODO 2
 
 
 ## Exigences non fonctionnelles
@@ -33,10 +33,11 @@ Vous trouverez ci-dessous un ensemble d'exigences fonctionnelles et non fonction
    - Le système doit maintenir la cohérence des données en mettant en œuvre une gestion appropriée des transactions pour les opérations CRUD.
 
 5. **Disponibilité**
-   - Le service pour produits s'efforce d'atteindre une haute disponibilité, en veillant à ce qu'il soit accessible aux utilisateurs 24 heures sur 24, 7 jours sur 7, avec un minimum de temps d'arrêt.
+  #### TODO 3
 
 6. **Journalisation et surveillance**
-   - Le service doit conserver des journaux complets à des fins d'audit et de débogage, et il doit s'intégrer à des outils de surveillance afin d'identifier et de traiter les problèmes de manière proactive.
+  #### TODO 4
+   
 
 7. **Validation des données**
    - Les données d'entrée, en particulier lors de la création et de la mise à jour des enregistrements de produits, doivent être validées afin d'éviter la corruption des données et les vulnérabilités en matière de sécurité.
@@ -48,4 +49,5 @@ Vous trouverez ci-dessous un ensemble d'exigences fonctionnelles et non fonction
    - Le service pour produits doit fournir une documentation API claire et à jour pour aider les applications clientes à formuler des demandes.
 
 10. **Intégration**
-    - Le service doit s'intégrer de manière transparente avec d'autres microservices et composants de l'application de ecommerce, tels que les services de commande et de paiement, d'inventaire.
+  #### TODO 5
+

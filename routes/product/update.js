@@ -32,20 +32,5 @@ const router = express.Router();
  *       500:
  *         description: Internal server error.
  */
+//TODO: complelez le code pour la mise a jour d'un produit
 
-router.put('/api/product/:id', async (req, res) => {
-  const id = req.params.id;
-  const data = req.body;
-  try {
-    const product = await Product.findByIdAndUpdate(id, data, {
-      new: true
-    });
-    res.status(204).send(product)
-  } catch (error) {
-    res.status(500).send()
-  }
-});
-
-const updateProductRouter = router;
-
-module.exports = { updateProductRouter };
