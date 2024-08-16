@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: inventory
+  labels:
+    app: inventory
+    rel: stable
+spec:
+  containers:
+    - name: inventory_serv
+      image: atemengue/inventory_serv
+      ports:
+        - containerPort: 3002
+      resources: {}

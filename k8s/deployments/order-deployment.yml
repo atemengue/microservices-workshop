@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: order-deployment
+  labels:
+    app: order
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: order
+  template:
+    metadata:
+      name: order-pod
+      labels:
+        app: order
+    # TODO Complete the space
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: order-clusterip
+spec:
+  type: ClusterIP
+  selector:
+    app: order
+  # TODO Complete the space
