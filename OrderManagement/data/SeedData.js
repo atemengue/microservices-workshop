@@ -4,7 +4,7 @@ const { readFileSync } = require('fs');
 const Product = require('../models/productModel');
 const User = require('../models/userModel');
 
-const uri = 'mongodb://mongodb:27017/orders';
+const uri = 'mongodb://localhost:27017/orders';
 const options = {
   serverSelectionTimeoutMS: 5000, // Set the timeout for selecting a server
   socketTimeoutMS: 45000,

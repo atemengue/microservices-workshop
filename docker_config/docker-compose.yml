@@ -17,41 +17,11 @@ services:
     networks:
       - workshop-micro-serv-docker1
 
-  order_serv:
-    build:
-      context: ../OrderManagement
-      dockerfile: Dockerfile
-#    image: atemengue/order-serv:latest
-    ports:
-      - 3001:3001
-    depends_on:
-      - mongodb
-    networks:
-      - workshop-micro-serv-docker1
+  # TODO Add the code to create the container of the service for order with the name order_serv (With me)
 
-  inventory_serv:
-    build:
-      context: ../InventoryManagament
-      dockerfile: Dockerfile
-#    image: atemengue/inventory-serv:latest
-    ports:
-      - 3002:3002
-    depends_on:
-      - mongodb
-    networks:
-      - workshop-micro-serv-docker1
+  # TODO Add the code to create the container of the service for inventory with the name inventory_serv
 
-  payment_serv:
-    build:
-      context: ../PaymentManagement
-      dockerfile: Dockerfile
-#    image: atemengue/payment-serv:latest
-    ports:
-      - 3003:3003
-    depends_on:
-      - db
-    networks:
-      - workshop-micro-serv-docker1
+  # TODO Add the code to create the container of the service for payment with the name payment_serv
 
 
 

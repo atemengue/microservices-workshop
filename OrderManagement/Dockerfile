@@ -1,13 +1,4 @@
-FROM node:18-alpine
+# TODO Complete the docker file of this service
 
-RUN mkdir -p /home
-WORKDIR /home
+# FROM node:20-alpine
 
-COPY package*.json ./
-COPY .env ./
-
-RUN npm install
-
-COPY . .
-
-CMD ["npm", "start"]
