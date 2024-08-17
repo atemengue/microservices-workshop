@@ -14,12 +14,3 @@ COPY --from=builder /app/target/gateway-service.jar .
 
 ENTRYPOINT ["java", "-jar", "gateway-service.jar"]
 
-
-
-FROM openjdk:17-alpine
-WORKDIR /app
-
-COPY /target/apigateway.jar .
-
-
-ENTRYPOINT ["java", "-jar", "apigateway.jar"]

@@ -19,9 +19,9 @@ services:
 
   order_serv:
     build:
-      context: ../OrderManagement
-      dockerfile: Dockerfile
-#    image: atemengue/order-serv:latest
+#      context: ../OrderManagement
+#      dockerfile: Dockerfile
+    image: atemengue/order-serv:latest
     ports:
       - 3001:3001
     depends_on:
@@ -31,9 +31,9 @@ services:
 
   inventory_serv:
     build:
-      context: ../InventoryManagament
-      dockerfile: Dockerfile
-#    image: atemengue/inventory-serv:latest
+#      context: ../InventoryManagament
+#      dockerfile: Dockerfile
+    image: atemengue/inventory-serv:latest
     ports:
       - 3002:3002
     depends_on:
@@ -43,9 +43,9 @@ services:
 
   payment_serv:
     build:
-      context: ../PaymentManagement
-      dockerfile: Dockerfile
-#    image: atemengue/payment-serv:latest
+#      context: ../PaymentManagement
+#      dockerfile: Dockerfile
+    image: atemengue/payment-serv:latest
     ports:
       - 3003:3003
     depends_on:
