@@ -1,0 +1,15 @@
+services:
+
+  mongodb:
+    image: mongo
+    ports:
+      - 27017:27017
+    networks:
+      -
+
+
+  # TODO Add the code to create the container of the service for inventory with the name inventory_serv
+
+
+
+networks:

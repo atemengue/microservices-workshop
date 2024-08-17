@@ -17,7 +17,17 @@ services:
     networks:
       - workshop-micro-serv-docker1
 
-  # TODO Add the code to create the container of the service for order with the name order_serv (With me)
+  order_serv:
+    #    build:
+    #      context: ../OrderManagement
+    #      dockerfile: Dockerfile
+    image: atemengue/order-serv:latest
+    ports:
+      - 3001:3001
+    depends_on:
+      - mongodb
+    networks:
+      - workshop-micro-serv-docker1
 
   # TODO Add the code to create the container of the service for inventory with the name inventory_serv
 
