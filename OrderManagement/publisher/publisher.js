@@ -6,25 +6,22 @@ const queue1 = "order";
 const queue2 = "product"
 
 
-async function sendUpdateInventoryMessage(data) {
-  const channel = await connect();
-  const message = JSON.stringify({
-    action: data.action,
-    payload: data
-  });
+// TODO sendCreateProductMessage
+async function sendCreateProductMessage(data) {
 
-  channel.sendToQueue(queue1, Buffer.from(message));
-  console.log("Sent 'inventoryUpdated' message:", message);
 }
 
 router.post('/api/order/event', async (req, res) => {
   try {
-    sendUpdateInventoryMessage(req.body);
+    sendCreateProductMessage(req.body);
   } catch (error) {
     console.log(error)
     res.status(500).send(error)
   }
 });
+
+
+// TODO 
 
 const createOrderRouterEvent = router
 

@@ -51,16 +51,7 @@ router.post('/api/order', async (req, res) => {
     await order.save();
 
     //step3: Update Inventory  async communication
-    const message = JSON.stringify({
-      action: EVENTS.InventoryUpdated,
-      payload: {
-        productId: productId,
-        quantity: -quantity
-      }
-    });
-
-    channel.sendToQueue(queue, Buffer.from(message));
-    console.log("Sent 'inventoryUpdated' message:", message);
+    //TODO
 
     res.status(201).send(order);
 

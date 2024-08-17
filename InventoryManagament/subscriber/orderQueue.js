@@ -3,26 +3,6 @@ const Inventory = require('../models/inventoryModel');
 const { EVENTS } = require('../events')
 
 async function startConsumer() {
-  const channel = await connect();
-  channel.consume('order', async (message) => {
-    const { action, payload, productId } = JSON.parse(message.content.toString());
-    switch (action) {
-      case EVENTS.InventoryUpdated:
-        console.log(payload, 'inside consumer inventoryUpdated');
-        const update = payload;
-        const filter = { productId: productId }
-        await Inventory.findOneAndUpdate(
-          filter, { $inc: update }, update, {
-          new: true
-        });
-        break;
-      default:
-        console.log('unknown action');
-    }
-
-    channel.ack(message);
-  }, {
-    noAck: false
-  });
+  // TODO
 }
 module.exports = { startConsumer };
