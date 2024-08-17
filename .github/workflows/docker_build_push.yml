@@ -57,4 +57,4 @@ jobs:
         with:
           context: ./MicroserviceApiGateway
           push: true
-          tags: atemengue/payment-serv:latest
+          tags: atemengue/gateway-serv:latest
