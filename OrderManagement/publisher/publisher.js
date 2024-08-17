@@ -9,7 +9,7 @@ const queue2 = "product"
 async function sendUpdateInventoryMessage(data) {
   const channel = await connect();
   const message = JSON.stringify({
-    action: "inventoryUpdated",
+    action: data.action,
     payload: data
   });
 
@@ -22,7 +22,7 @@ router.post('/api/order/event', async (req, res) => {
     sendUpdateInventoryMessage(req.body);
   } catch (error) {
     console.log(error)
-    res.status(500).error
+    res.status(500).send(error)
   }
 });
 
