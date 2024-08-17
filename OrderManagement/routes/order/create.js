@@ -43,13 +43,7 @@ router.post('/api/order', async (req, res) => {
 
     // step2: Create Order
     console.log(req.body);
-    const order = new Order({
-      productId: productId,
-      userId,
-      orderDate,
-      status,
-      quantity
-    });
+    const order = new Order(req.body);
     console.log(order);
     await order.save();
 
