@@ -18,7 +18,7 @@ services:
       - workshop-micro-serv-docker1
 
   order_serv:
-    build:
+#    build:
 #      context: ../OrderManagement
 #      dockerfile: Dockerfile
     image: atemengue/order-serv:latest
@@ -30,7 +30,7 @@ services:
       - workshop-micro-serv-docker1
 
   inventory_serv:
-    build:
+#    build:
 #      context: ../InventoryManagament
 #      dockerfile: Dockerfile
     image: atemengue/inventory-serv:latest
@@ -42,7 +42,7 @@ services:
       - workshop-micro-serv-docker1
 
   payment_serv:
-    build:
+#    build:
 #      context: ../PaymentManagement
 #      dockerfile: Dockerfile
     image: atemengue/payment-serv:latest
