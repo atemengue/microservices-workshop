@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: inventory
-          image: atemengue/inventory-serv:latest
+          image: docker_config-inventory_serv:latest
           ports:
             - containerPort : 3002
       restartPolicy: Always
