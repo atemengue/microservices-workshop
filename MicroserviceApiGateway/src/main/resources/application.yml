@@ -1,0 +1,25 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+  # LOCAL:
+
+        - id: Order_Service
+          uri: http://order_serv:3001
+          predicates:
+            - Path=/api/order/**
+
+        - id: Inventory_Service
+          uri: http://inventory_serv:3002
+          predicates:
+            - Path=/api/inventory/**
+
+        - id: Payment_Service
+          uri: http://payment_serv:3003
+          predicates:
+            - Path=/api/payment/**
+
+
+# DEPLOYED Pour les applications déployées avec Docker, il faudra remplacer localhost par le nom du container (Se rassurer que les applications soient dans le même réseau)
+
+
