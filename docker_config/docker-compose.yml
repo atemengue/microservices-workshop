@@ -8,14 +8,14 @@ services:
       POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
       POSTGRES_DB: ${DATABASE_NAME}
     networks:
-      - workshop-micro-serv-docker1
+      - workshop
 
   mongodb:
     image: mongo
     ports:
       - 27017:27017
     networks:
-      - workshop-micro-serv-docker1
+      - workshop
 
   order_serv:
 #    build:
@@ -27,7 +27,7 @@ services:
     depends_on:
       - mongodb
     networks:
-      - workshop-micro-serv-docker1
+      - workshop
 
   inventory_serv:
 #    build:
@@ -39,7 +39,7 @@ services:
     depends_on:
       - mongodb
     networks:
-      - workshop-micro-serv-docker1
+      - workshop
 
   payment_serv:
 #    build:
@@ -51,9 +51,9 @@ services:
     depends_on:
       - db
     networks:
-      - workshop-micro-serv-docker1
+      - workshop
 
 
 
 networks:
-  workshop-micro-serv-docker1:
+  workshop:
