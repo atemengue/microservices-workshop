@@ -8,7 +8,7 @@ metadata:
 spec:
   containers:
     - name: inventory_serv
-      image: docker_config-inventory_serv:latest
+      image: atemengue/inventory-serv:latest
       ports:
         - containerPort: 3002
       resources: {}

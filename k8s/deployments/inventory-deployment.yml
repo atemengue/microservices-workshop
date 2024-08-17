@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: inventory
-          image: docker_config-inventory_serv:latest
+          image: atemengue/inventory-serv:latest
           ports:
             - containerPort : 3002
       restartPolicy: Always
@@ -27,7 +27,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: inventory-clusterip
+  name: inventory_serv
 spec:
   type: ClusterIP
   selector:
