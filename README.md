@@ -95,6 +95,9 @@ The current solution has an example for using a private npm repository. if you w
 # DOCKER 
 # docker run -d --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:3-management
 
+# snippets
+https://flawless-petalite-4b5.notion.site/Architecture-MicroService-Principes-et-Pratiques-avec-NodeJS-407d5c7a9c9c43a5a155f3ae17468f29?pvs=74
+
 
 
 #### docker  rabbitmq
