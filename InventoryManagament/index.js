@@ -9,7 +9,7 @@ const options = {
 
 const start = async () => {
   try {
-    mongoose.connect("mongodb://localhost:3001:27017/inventory", options);
+    mongoose.connect("mongodb://localhost:27017/inventory", options);
     console.log('Database connected successfully');
   } catch (error) {
     console.error('Database connection error:', error);
